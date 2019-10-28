@@ -8,8 +8,6 @@ $rows = mysqli_fetch_assoc($result);
 
 $author_id = $rows['author_id'];
 
-echo("well done!<br>");
-
 if($_SESSION['userid'] === $author_id)
 {
 	?>
@@ -22,15 +20,10 @@ if($_SESSION['userid'] === $author_id)
 else
 {
 	$alarm_type = "HIT";
-	echo("'{$alarm_type}'<br>");
 	$sender_id = $_SESSION['userid'];
-	echo("{$sender_id}<br>");
 	$receive_id = $author_id;
-	echo("{$receive_id}<br>");
-	$link = $_SERVER['DOCUMENT_ROOT']."/SFproject/alarmtest/alarm.php";
-	echo("{$link}<br>");
+	$link = "/SFproject/alarmtest/alarm.php";
 	$hit_query = "INSERT INTO alarm_test VALUES ('{$alarm_type}', '{$sender_id}', '{$receive_id}', '{$link}');";
-	echo($hit_query);
 
 	$result = $connect->query($hit_query);
 	if(isset($result))

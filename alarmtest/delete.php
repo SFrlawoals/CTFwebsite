@@ -8,34 +8,40 @@ $rows = mysqli_fetch_assoc($result);
 $usrid = $rows['author_id'];
 
 
-if(!isset($_SESSION['userid'])) {
-    ?>              <script>
-                            alert("권한이 없습니다.");
-                            location.replace("./view.php?number=<?=$number?>");
-                    </script>
-    <?php   }
-
-else if ($_SESSION['userid']==$usrid){
+if(!isset($_SESSION['userid']))
+{
+    ?>
+    <script>
+        alert("권한이 없습니다.");
+        location.replace("./view.php?number=<?=$number?>");
+    </script>
+    <?php
+}
+else if ($_SESSION['userid']==$usrid)
+{
     $sql = "delete from reply where reply_number=$number";
-
     $ret=mysqli_query($connect,$sql);
-if($ret){
+
+    if($ret)
+    {
     ?>
         <script>
             alert("delete success!!");
             location.replace("./alarm.php");
         </script>
-<?php    }
+    <?php   
+    }
     else {
         echo "delete fail";
     }
 }
-else{
-    ?>              <script>
-                            alert("권한이 없습니다.");
-                            location.replace("./alarm.php");
-                    </script>
-    <?php   }
-
+else
+{
+    ?>
+    <script>
+            alert("권한이 없습니다.");
+            location.replace("./alarm.php");
+    </script>
+    <?php
+}
 ?>
-

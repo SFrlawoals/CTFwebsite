@@ -13,13 +13,13 @@
 
 <div class="container_content">
 	<div class="content">
-		<p align="middle"><a href="">pwnable</a></p>
+		<p align="middle"><a href="">CTF</a></p>
 	</div>
 	<div class="content">
 		<p align="middle"><a href="">board</a></p>
 	</div>
 	<div class="content">
-		<p align="middle"><a href="">rank</a></p>
+		<p align="middle"><a href="./rank.php">rank</a></p>
 	</div>
 	<div class="content">
 		<p align="middle"><a href="./alarmtest/alarm.php">alarmtest</a></p>

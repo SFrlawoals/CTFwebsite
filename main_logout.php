@@ -10,11 +10,11 @@
 </style>
 
 <form class="logout_form">
-	Hello <b><font color="black"><?php echo("{$_SESSION['userid']}")?></font></b><br>
+	Hello <b><font color="black"><?php echo("".$_SESSION['userid']."")?></font></b><br>
 	<?php
 		// session_start();
 		// include("./database/db_connect.php");
-		echo("Score : {$_SESSION['score']}<br>");
+		echo("Score : ".$_SESSION['score']."<br>");
 	?>
 	<a href="./member/member_logout.php">logout</a>
 </form>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
 
@@ -77,13 +78,21 @@
 			
 		</div>
 
-		<div class="container">
-			<div class="alarm">
-				<!-- alarm! -->
-				<?php include("./check_alarm.php"); ?>
-				<!-- alarm! -->
+		<?php
+
+		if(isset($_SESSION['userid']))
+		{
+			?>
+			<div class="container">
+				<div class="alarm">
+					<!-- alarm! -->
+					<?php include("./check_alarm.php"); ?>
+					<!-- alarm! -->
+				</div>
 			</div>
-		</div>
+			<?php
+		}
+		?>
 	</div>
 
 </body>

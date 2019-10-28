@@ -36,7 +36,12 @@
 		$path = "/var/www/html/SFproject";
 		// echo $_SERVER['DOCUMENT_ROOT']."<BR>";
 		session_start();
-		echo $_SESSION['userid']."<br>";
+		?>
+		<hr>
+		page : 
+		<b><a href="<?php echo("../main.php")?>">MAIN PAGE</a></b>
+		<hr>
+		<?php
 		#include("./db_connect.php");
 		include($path."/database/db_connect.php");
 		if($_SESSION['userid'] !== NULL)

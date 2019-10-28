@@ -13,7 +13,7 @@ if($id==NULL || $pw==NULL || $pwc==NULL || $name== NULL || $stid==NULL){
 ?>
         <script>
                 alert('PLEASE FILL OUT ALL OF YOU BLANKS');
-                location.replace('./login.html');
+                location.replace('../main.php');
         </script>
 <?php
     exit(-1);
@@ -22,7 +22,7 @@ else if($pw!=$pwc){
 ?>
     <script>
         alert('PASSWORD AND PASSWORD CONFIRM IS DIFFERENT EACH OTHER');
-        location.replace('./login.html');
+        location.replace('../main.php');
     </script>
 <?php
     exit(-1);
@@ -33,7 +33,7 @@ if($result->num_rows>=1){
 ?>
         <script>
                 alert('THIS ID IS ALREADY ON USE');
-                location.replace('./login.html');
+                location.replace('../main.php');
         </script>
 <?php
     exit(-1);
@@ -45,7 +45,7 @@ else{
 ?>
         <script>
                 alert('REGESTERATION COMPLETE!');
-                location.replace('./main.php');
+                location.replace('../main.php');
         </script>
 <?php
     }
