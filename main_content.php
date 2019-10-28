@@ -22,6 +22,6 @@
 		<p align="middle"><a href="">rank</a></p>
 	</div>
 	<div class="content">
-		<p align="middle"><a href="">test</a></p>
+		<p align="middle"><a href="./alarmtest/alarm.php">alarmtest</a></p>
 	</div>
 </div>

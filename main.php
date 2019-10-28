@@ -19,7 +19,6 @@
 	    width: 1080px;
 	    text-align: left;
 	    zoom: 1;
-	    background-color: lightblue;
 	}
 	.column_left {
 	    position: relative;
@@ -30,6 +29,12 @@
 	    position: relative;
 	    float: right;
 	    width: 740px;
+	}
+	.alarm{
+	    clear: both;
+	    padding: 8px;
+	    text-align: left;
+	    border: 1px solid #222;
 	}
 	</style>
 </head>
@@ -42,11 +47,16 @@
 	<div class="wrap">
 		<div class="container">
 			<div class="column_left">
+				
 				<!-- login <-> logout -->
 				<?php
-					if($_SSESION['userid']===NULL)
+					if($_SESSION['userid'] === NULL)
 					{
-						include("./main_login.php");
+						?>
+							<div>
+								<?php include("./main_login.php"); ?>
+							</div>
+						<?php
 					}
 					else
 					{
@@ -54,16 +64,30 @@
 					}
 				?>
 				<!-- login <-> logout -->
+
+				
 			</div>
 			<div class="column_right">
+
+				<!-- main_content -->
 				<?php include("./main_content.php") ?>
+				<!-- main_content -->
+
 			</div>
+			
 		</div>
 
+		<div class="container">
+			<div class="alarm">
+				<!-- alarm! -->
+				<?php include("./check_alarm.php"); ?>
+				<!-- alarm! -->
+			</div>
+		</div>
 	</div>
+
 </body>
 
 <?php include("./include/main_footer.php") ?>
 
 </html>
-
