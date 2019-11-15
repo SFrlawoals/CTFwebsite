@@ -21,7 +21,7 @@ th, td {
   <table>
     <thead>
       <tr>
-      <th>student_id</th>
+      <th width="400px">student_id</th>
       <th>student_name</th>
       <th>score</th>
       </tr>
@@ -37,7 +37,7 @@ th, td {
     
     $result = mysqli_query($con, $query);
     while( $row = mysqli_fetch_array($result)){
-      echo ('<tr><td>' . $row['student_id'].'</td><td>'. $row[ 'student_name' ] . '</td><td>' . $row[ 'score' ] . '</td><td>');
+      echo ("<tr><td align = 'middle'>" . $row['student_id']."</td><td align = 'middle'>". $row[ 'student_name' ] . "</td><td align = 'middle'>" . $row[ 'score' ] . '</td>');
     }
     ?>
     </tbody>

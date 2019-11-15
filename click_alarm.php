@@ -8,7 +8,7 @@
 	$sender_id = $_GET['sender_id'];
 	$receiver_id = $_GET['receiver_id'];
 	$link = $_GET['link'];
-	$delete_query = "DELETE FROM alarm_test WHERE alarm_type = '{$type}' and sender_id = '{$sender_id}' and receiver_id = '{$receiver_id}' and link = '{$link}' limit 1";
+	$delete_query = "DELETE FROM alarm_test WHERE alarm_type = '".$type."' and sender_id = '".$sender_id."' and receiver_id = '".$receiver_id."' and link = '".$link."' limit 1";
 	$result = mysqli_query($con, $delete_query);
 
 	if($result)

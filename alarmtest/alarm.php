@@ -68,7 +68,7 @@
 		<form action="./reply_check.php" id="inform" method="GET"> 
 			<div>
 				<textarea name="content" form="inform" class="input_content"></textarea>
-				<input type="submit" style="margin: 5% 5%;">
+				<button type="submit" style="margin: 5% 5%;" name="Submit">Submit</button>
 			</div>
 		</form>
 	</div>

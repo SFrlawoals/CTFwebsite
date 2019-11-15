@@ -23,7 +23,7 @@ else
 	$sender_id = $_SESSION['userid'];
 	$receive_id = $author_id;
 	$link = "/SFproject/alarmtest/alarm.php";
-	$hit_query = "INSERT INTO alarm_test VALUES ('{$alarm_type}', '{$sender_id}', '{$receive_id}', '{$link}');";
+	$hit_query = "INSERT INTO alarm_test VALUES ('".$alarm_type."', '".$sender_id."', '".$receive_id."', '".$link."');";
 
 	$result = $connect->query($hit_query);
 	if(isset($result))

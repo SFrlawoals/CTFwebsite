@@ -5,7 +5,7 @@
 	height: 77px;
     padding:8px;
     border:1px solid #999;
-    background-color: lightgreen;
+    background-color: transparent;
 }
 </style>
 

@@ -2,11 +2,6 @@
 
 <html>
 <head>
-
-
-
-</head>
-<head>
 	<style type="text/css">
 	.wrap {
 	    position: relative;

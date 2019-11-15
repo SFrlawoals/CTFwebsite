@@ -1,41 +1,23 @@
 <?php
 	include("./db_connect.php");
 	session_start();
-	echo("hi <h1>{$_SESSION['userid']}</h1><br>");
 	$id = $_SESSION['userid'];
-	echo("{$id}<br>");
 	$content = $_GET['content'];
-
-	echo("your content is <br><br>");
-	?>
-
-<div style="border: 1px solid #cccccc; width: 25%">
-	<div style="margin: 4% 4%;">
-		<?php
-			echo "<b>".$content."</b><br>";
-		?>	
-	</div>
-</div>
-
-<?php
-	echo "one<br>";
 	
-	if(isset($con))
-		echo("connect<br>");
-	$query = "INSERT INTO reply (reply_number, author_id, content) VALUES (null, '{$id}', '{$content}');";
-	echo $query."<br>";
+	$query = "INSERT INTO reply VALUES (null, '".$id."', '".$content."');";
 	$result = mysqli_query($con, $query);
-	echo "two<br>";
+	
+	// $query = $con->prepare("INSERT INTO reply VALUES (?,?,?)");
+	// $null = null;
+	// $query->bind_param("sss", $null, $id, $content);
+	// $result = $query->execute();
+
+	$basename=basename($_SERVER["PHP_SELF"]);
+	$return = str_replace($basename, "alarm.php", $basename);
 
 	if($result)
 	{
-		echo("success<br>");
-		$hostname=$_SERVER["HTTP_HOST"];
-		$uri= $_SERVER['REQUEST_URI'];
-		$phpself=$_SERVER["PHP_SELF"];
-		$basename=basename($_SERVER["PHP_SELF"]);
-
-		$return = str_replace($basename, "alarm.php", $basename);
+		
         ?>
 
         <script>
@@ -47,8 +29,14 @@
 	}
 	else
 	{
-		echo("error<br>");
+		?>
+		<script>
+			alert('error!');
+			location.replace("<?php echo $return?>");
+		</script>
+		<?php
 	}
 
 	mysqli_close($connect);
+	// $query = "INSERT INTO reply (reply_number, author_id, content) VALUES (null, '{$id}', '{$content}');";
 ?>

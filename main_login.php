@@ -4,7 +4,7 @@
 	float: left;
 	padding: 8px;
 	width: 220px;
-	background-color: lightgreen;
+	background-color: transparent;
 	border: 1px solid #999;
 }
 #input{
